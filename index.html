@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>복습 캘린더</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <h1>📚 복습 캘린더</h1>
+  <div id="reviewNotice" class="review-notice"></div>
+  <p class="subtitle">공부한 내용을 잊기 전에 다시 복습해요!</p>
+  <div class="add-study">
+<h2>✏️ 공부 기록 추가</h2>
+<label>
+  과목
+  <input type="text" id="subject" placeholder="예: 한국사">
+</label>
+<label>
+  공부한 내용
+  <input type="text" id="topic" placeholder="예: 1920년대 민족운동">
+</label>
+<label>
+  공부한 날짜
+  <input type="date" id="studyDate">
+</label>
+<button id="addReview">복습 일정 만들기</button>
+  </div>
+  <div class="calendar-header">
+<button id="prevMonth">‹</button>
+<h2 id="monthTitle"></h2>
+<button id="nextMonth">›</button>
+  </div>
+  <div class="week">
+    <span>일</span>
+    <span>월</span>
+    <span>화</span>
+    <span>수</span>
+    <span>목</span>
+    <span>금</span>
+    <span>토</span>
+  </div>
+  <div class="calendar"></div>
+  <div class="legend">
+<div>
+  <span class="dot study"></span>
+  공부한 날
+</div>
+<div>
+  <span class="dot review2"></span>
+  2일차 복습
+</div>
+<div>
+  <span class="dot review7"></span>
+  7일차 복습
+</div>
+<div>
+  <span class="dot review14"></span>
+  14일차 복습
+</div>
+  </div>
+
+  <div class="today-review">
+  <h2>📚 오늘 복습할 내용</h2>
+  <div id="todayReviewList">
+    <p class="no-review">오늘 복습할 내용이 없어요!</p>
+  </div>
+</div>
+  
+</div>
+
+  <!-- 공부 기록 수정 창 -->
+<div id="editModal" class="modal">
+  <div class="modal-box">
+    <h2>✏️ 공부 기록 수정</h2>
+
+    <label>
+      과목
+      <input type="text" id="editSubject">
+    </label>
+
+    <label>
+      공부한 내용
+      <input type="text" id="editTopic">
+    </label>
+
+    <label>
+      공부한 날짜
+      <input type="date" id="editDate">
+    </label>
+
+    <div class="modal-buttons">
+  <button id="saveEdit">저장</button>
+  <button id="deleteRecord">🗑️ 삭제</button>
+  <button id="cancelEdit">취소</button>
+</div>
+  </div>
+</div>
+
+<!-- 날짜 기록 보기 팝업 -->
+<div id="dayModal" class="modal">
+  <div class="modal-box">
+    <h2 id="dayModalTitle">📅 날짜 기록</h2>
+
+    <div id="dayRecordList"></div>
+
+    <button id="closeDayModal">닫기</button>
+  </div>
+</div>  
+<script src="script.js"></script>
+</body>
+</html>
